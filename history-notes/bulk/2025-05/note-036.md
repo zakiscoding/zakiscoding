@@ -1,0 +1,2 @@
+- Date: 2025-05-20
+- Change: routine project documentation maintenance.
