@@ -70,19 +70,19 @@
 
 ---
 
-### 📊 GitHub Stats
+### ⚡ By the Numbers
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=zakiscoding&theme=tokyonight&hide_border=true" width="49%" />
-  <img src="https://github-readme-stats.vercel.app/api?username=zakiscoding&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" width="49%" />
-</div>
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=zakiscoding&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" width="50%" />
-</div>
+| Metric | Impact |
+|--------|--------|
+| 🚀 CI/CD pipeline deployment time | **~50% faster** |
+| ⚡ RAG chatbot latency | **13s → <4s (65% reduction)** |
+| 💰 LLM inference cost reduction | **~20% via TTL memory** |
+| 🔁 ML experiment turnaround | **~40% faster** |
+| 📦 ECS Fargate services deployed | **2 independent services behind ALB** |
+| ☁️ Cloud migrations completed | **On-prem → AWS + Azure** |
 
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=zakiscoding&theme=tokyonight&no-frame=true&row=1&column=7&margin-w=4" />
 </div>
 
 ---
