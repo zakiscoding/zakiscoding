@@ -70,22 +70,6 @@
 
 ---
 
-### ⚡ By the Numbers
-
-<div align="center">
-
-| Metric | Impact |
-|--------|--------|
-| 🚀 CI/CD pipeline deployment time | **~50% faster** |
-| ⚡ RAG chatbot latency | **13s → <4s (65% reduction)** |
-| 💰 LLM inference cost reduction | **~20% via TTL memory** |
-| 🔁 ML experiment turnaround | **~40% faster** |
-| 📦 ECS Fargate services deployed | **2 independent services behind ALB** |
-| ☁️ Cloud migrations completed | **On-prem → AWS + Azure** |
-
-</div>
-
----
 
 ### 🚀 Featured Projects
 
