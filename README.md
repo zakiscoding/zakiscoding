@@ -10,12 +10,25 @@
 
 ### 👋 About Me
 
+<table>
+<tr>
+<td valign="top" width="60%">
+
 - 🤖 AI Engineer & DevOps builder — I ship real products, not demos
 - 🏢 **SWE Intern @ Signify** — migrating infra to AWS/Azure, building CI/CD pipelines cutting deploy time by ~50%
 - 🧠 **AI Eng Intern @ Crescent Technology** — reduced RAG chatbot latency from 13s → <4s, cut LLM costs ~20%
 - 🎓 **B.S. Computer Science @ Georgia State University** — Expected May 2027
 - ☁️ AWS Certified: **CCP · AIF-C01** | Azure: **AZ-900**
 - 📍 Atlanta, GA · Open to internships, collabs & cool projects
+
+</td>
+<td valign="top" width="40%">
+
+<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" />
+
+</td>
+</tr>
+</table>
 
 ---
 
