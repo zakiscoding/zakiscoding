@@ -2,8 +2,13 @@ name: Daily GitHub Activity
 
 on:
   schedule:
-    - cron: "0 10 * * *"   # 10:00 AM UTC every single day, forever
-  workflow_dispatch:         # also lets you trigger it manually from GitHub UI
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Run without making remote changes"
+        required: false
+        default: "false"
 
 permissions:
   contents: write
@@ -13,6 +18,11 @@ permissions:
 jobs:
   daily-activity:
     runs-on: ubuntu-latest
+    environment: GH_PAT
+    env:
+      GH_TOKEN: ${{ secrets.GH_PAT }}
+      OWNER: zakiscoding
+      DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
 
     steps:
       - name: Configure git identity
@@ -20,179 +30,118 @@ jobs:
           git config --global user.email "zakiscoding@users.noreply.github.com"
           git config --global user.name "zakiscoding"
 
-      # ── 1. COMMIT ────────────────────────────────────────────────────────────
-      - name: "1 of 5 – Commit"
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
-          OWNER: zakiscoding
+      - name: Choose rotating repos
+        id: seed
         run: |
-          repos=(zakiscoding Tinker-1 Stackz mysterygame coding- web-programming projects testing wp)
-          count=${#repos[@]}
-          seed=$(date +%j)
-          repo=${repos[$((seed % count))]}
-          echo "Commit target: $repo"
+          REPOS=(zakiscoding Tinker-1 Stackz mysterygame coding- web-programming projects testing wp)
+          COUNT=${#REPOS[@]}
+          DAY=$((10#$(date +%j)))
+          echo "commit_repo=${REPOS[$((DAY % COUNT))]}" >> "$GITHUB_OUTPUT"
+          echo "issue_repo=${REPOS[$(((DAY + 1) % COUNT))]}" >> "$GITHUB_OUTPUT"
+          echo "pr_repo=${REPOS[$(((DAY + 2) % COUNT))]}" >> "$GITHUB_OUTPUT"
 
-          git clone "https://$GH_TOKEN@github.com/$OWNER/$repo.git" /tmp/commit-repo
+      - name: 1 of 5 - Commit
+        run: |
+          REPO="${{ steps.seed.outputs.commit_repo }}"
+          echo "Commit target: $OWNER/$REPO"
+          if [ "$DRY_RUN" = "true" ]; then
+            echo "Dry run enabled; skipping commit"
+            exit 0
+          fi
+
+          rm -rf /tmp/commit-repo
+          git clone "https://x-access-token:${GH_TOKEN}@github.com/$OWNER/$REPO.git" /tmp/commit-repo
           cd /tmp/commit-repo
 
-          # Ensure we're on main (or master)
-          git switch main 2>/dev/null || git switch master 2>/dev/null || true
+          DEFAULT_BRANCH=$(git remote show origin | sed -n 's/.*HEAD branch: //p')
+          [ -z "$DEFAULT_BRANCH" ] && DEFAULT_BRANCH=main
+          git switch "$DEFAULT_BRANCH" || true
 
           mkdir -p logs
-          echo "$(date -u '+%Y-%m-%d %H:%M:%S') – daily activity log" >> logs/activity.log
+          echo "$(date -u '+%Y-%m-%d %H:%M:%S UTC') daily activity" >> logs/activity.log
 
           git add logs/activity.log
+          git commit -m "chore: update activity log" || echo "Nothing to commit"
+          git push origin "$DEFAULT_BRANCH"
 
-          commit_messages=(
-            "chore: update activity log"
-            "docs: add daily maintenance note"
-            "chore: clean up stale entries"
-            "docs: refresh project notes"
-            "chore: minor housekeeping"
-            "fix: correct outdated reference"
-            "docs: update changelog"
-            "chore: prune unused entries"
-            "refactor: tidy up log format"
-            "docs: add weekly progress note"
-          )
-          msg=${commit_messages[$((seed % ${#commit_messages[@]}))]}
-          git commit -m "$msg" || echo "Nothing to commit"
-          git push || echo "Push skipped"
-
-      # ── 2. ISSUE ─────────────────────────────────────────────────────────────
-      - name: "2 of 5 – Open Issue"
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
-          OWNER: zakiscoding
+      - name: 2 of 5 - Open Issue
+        id: issue
         run: |
-          repos=(zakiscoding Tinker-1 Stackz mysterygame coding- web-programming projects testing wp)
-          count=${#repos[@]}
-          seed=$(date +%j)
-          repo=${repos[$(( (seed + 1) % count ))]}
-          echo "Issue target: $repo"
+          REPO="${{ steps.seed.outputs.issue_repo }}"
+          echo "Issue target: $OWNER/$REPO"
+          if [ "$DRY_RUN" = "true" ]; then
+            echo "number=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
 
-          issue_titles=(
-            "Review error handling in main flow"
-            "Improve input validation on user-facing fields"
-            "Add missing edge case handling for empty inputs"
-            "Consider extracting repeated logic into a helper"
-            "Investigate inconsistent output formatting"
-            "Add missing boundary checks"
-            "Review naming consistency across the module"
-            "Reduce nested conditionals for readability"
-            "Add defensive fallback for missing config values"
-            "Audit unused variables and dead code paths"
-          )
-          issue_bodies=(
-            "Found during code review: this area lacks sufficient error handling for unexpected inputs."
-            "User-facing fields accept values that could cause downstream issues. Needs validation."
-            "Edge cases around empty or null inputs are not consistently handled."
-            "The same pattern is repeated in multiple places. A shared helper would reduce maintenance overhead."
-            "Output formatting differs between code paths. Should be unified for consistency."
-            "Boundary conditions are not checked before processing. Could produce out-of-range behavior."
-            "Variable and function names are inconsistent in this module. A rename pass would improve readability."
-            "Deeply nested conditionals make this section hard to follow. Refactoring would help."
-            "Missing config values cause the app to fail unexpectedly. A fallback default should be added."
-            "Several variables are declared but never used. These should be removed."
-          )
-          title=${issue_titles[$((seed % ${#issue_titles[@]}))]}
-          body=${issue_bodies[$((seed % ${#issue_bodies[@]}))]}
-          gh issue create --repo "$OWNER/$repo" --title "$title" --body "$body"
+          ISSUE_URL=$(gh issue create \
+            --repo "$OWNER/$REPO" \
+            --title "Review input validation and edge cases" \
+            --body "Code review follow-up: validate empty input paths and boundary handling.")
+          ISSUE_NUM="${ISSUE_URL##*/}"
+          echo "number=$ISSUE_NUM" >> "$GITHUB_OUTPUT"
 
-      # ── 3. PULL REQUEST ───────────────────────────────────────────────────────
-      - name: "3 of 5 – Create PR"
-        id: create_pr
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
-          OWNER: zakiscoding
+      - name: 3 of 5 - Create PR
+        id: pr
         run: |
-          repos=(zakiscoding Tinker-1 Stackz mysterygame coding- web-programming projects testing wp)
-          count=${#repos[@]}
-          seed=$(date +%j)
-          repo=${repos[$(( (seed + 2) % count ))]}
-          echo "PR target: $repo"
+          REPO="${{ steps.seed.outputs.pr_repo }}"
+          echo "PR target: $OWNER/$REPO"
+          if [ "$DRY_RUN" = "true" ]; then
+            echo "number=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
 
-          pr_titles=(
-            "fix: improve error handling"
-            "chore: add maintenance log entry"
-            "docs: update notes"
-            "fix: guard against empty input"
-            "chore: remove unused entries"
-            "fix: correct formatting inconsistency"
-            "docs: add inline notes"
-            "chore: clean up log file"
-            "fix: add missing boundary check"
-            "docs: record daily progress"
-          )
-          title=${pr_titles[$((seed % ${#pr_titles[@]}))]}
-          branch="auto/maintenance-$(date +%Y%m%d-%H%M%S)"
-
-          git clone "https://$GH_TOKEN@github.com/$OWNER/$repo.git" /tmp/pr-repo
+          rm -rf /tmp/pr-repo
+          git clone "https://x-access-token:${GH_TOKEN}@github.com/$OWNER/$REPO.git" /tmp/pr-repo
           cd /tmp/pr-repo
 
-          default_branch=$(git remote show origin | grep 'HEAD branch' | awk '{print $NF}')
-          git switch "$default_branch" 2>/dev/null || git switch main 2>/dev/null || git switch master 2>/dev/null
+          DEFAULT_BRANCH=$(git remote show origin | sed -n 's/.*HEAD branch: //p')
+          [ -z "$DEFAULT_BRANCH" ] && DEFAULT_BRANCH=main
+          git switch "$DEFAULT_BRANCH" || true
 
-          git switch -c "$branch"
+          BRANCH="auto/maintenance-$(date +%Y%m%d-%H%M%S)"
+          git switch -c "$BRANCH"
+
           mkdir -p logs
-          echo "$(date -u '+%Y-%m-%d %H:%M:%S') – pr log entry" >> logs/pr-notes.log
+          echo "$(date -u '+%Y-%m-%d %H:%M:%S UTC') pr maintenance" >> logs/pr-notes.log
           git add logs/pr-notes.log
-          git commit -m "$title"
-          git push -u origin "$branch"
+          git commit -m "chore: daily maintenance update"
+          git push -u origin "$BRANCH"
 
-          pr_url=$(gh pr create \
-            --repo "$OWNER/$repo" \
-            --base "$default_branch" \
-            --head "$branch" \
-            --title "$title" \
-            --body "Automated maintenance PR – $(date +%Y-%m-%d)
+          PR_URL=$(gh pr create \
+            --repo "$OWNER/$REPO" \
+            --base "$DEFAULT_BRANCH" \
+            --head "$BRANCH" \
+            --title "chore: daily maintenance update" \
+            --body "Automated daily maintenance PR.")
+          PR_NUM="${PR_URL##*/}"
+          echo "number=$PR_NUM" >> "$GITHUB_OUTPUT"
+          echo "repo=$REPO" >> "$GITHUB_OUTPUT"
 
-- Routine log update
-- Part of daily maintenance cycle")
-
-          pr_number=$(echo "$pr_url" | grep -oE '[0-9]+$')
-          echo "pr_number=$pr_number" >> "$GITHUB_OUTPUT"
-          echo "pr_repo=$repo"        >> "$GITHUB_OUTPUT"
-          echo "PR created: $pr_url (number $pr_number)"
-
-      # ── 4. REVIEW ────────────────────────────────────────────────────────────
-      - name: "4 of 5 – Approve PR"
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
-          OWNER: zakiscoding
+      - name: 4 of 5 - Review PR
         run: |
-          pr_number="${{ steps.create_pr.outputs.pr_number }}"
-          pr_repo="${{ steps.create_pr.outputs.pr_repo }}"
-          if [ -z "$pr_number" ]; then echo "No PR to review"; exit 0; fi
+          REPO="${{ steps.pr.outputs.repo }}"
+          PR_NUM="${{ steps.pr.outputs.number }}"
+          if [ "$DRY_RUN" = "true" ] || [ -z "$PR_NUM" ] || [ "$PR_NUM" = "0" ]; then
+            echo "No PR review needed"
+            exit 0
+          fi
 
-          review_bodies=(
-            "Looks good overall. Log update is clean and follows the existing pattern."
-            "LGTM. Minor change, no issues found."
-            "Reviewed. Change is straightforward and safe to merge."
-            "Checked the log update — consistent with prior entries, approved."
-            "No concerns. Approving this maintenance change."
-          )
-          seed=$(date +%j)
-          body=${review_bodies[$((seed % ${#review_bodies[@]}))]}
-
-          gh pr review "$pr_number" \
-            --repo "$OWNER/$pr_repo" \
+          gh pr review "$PR_NUM" \
+            --repo "$OWNER/$REPO" \
             --approve \
-            --body "$body"
-          echo "Approved PR #$pr_number in $pr_repo"
+            --body "Reviewed and approved."
 
-      # ── 5. MERGE ─────────────────────────────────────────────────────────────
-      - name: "5 of 5 – Merge PR"
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
-          OWNER: zakiscoding
+      - name: 5 of 5 - Merge PR
         run: |
-          pr_number="${{ steps.create_pr.outputs.pr_number }}"
-          pr_repo="${{ steps.create_pr.outputs.pr_repo }}"
-          if [ -z "$pr_number" ]; then echo "No PR to merge"; exit 0; fi
+          REPO="${{ steps.pr.outputs.repo }}"
+          PR_NUM="${{ steps.pr.outputs.number }}"
+          if [ "$DRY_RUN" = "true" ] || [ -z "$PR_NUM" ] || [ "$PR_NUM" = "0" ]; then
+            echo "No PR merge needed"
+            exit 0
+          fi
 
-          gh pr merge "$pr_number" \
-            --repo "$OWNER/$pr_repo" \
-            --merge \
+          gh pr merge "$PR_NUM" \
+            --repo "$OWNER/$REPO" \
+            --squash \
             --delete-branch
-          echo "Merged PR #$pr_number in $pr_repo"
