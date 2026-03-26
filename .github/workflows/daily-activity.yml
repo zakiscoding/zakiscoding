@@ -29,6 +29,7 @@ jobs:
         run: |
           git config --global user.email "zakiscoding@users.noreply.github.com"
           git config --global user.name "zakiscoding"
+          gh auth setup-git
 
       - name: Choose rotating repos
         id: seed
@@ -50,7 +51,7 @@ jobs:
           fi
 
           rm -rf /tmp/commit-repo
-          git clone "https://x-access-token:${GH_TOKEN}@github.com/$OWNER/$REPO.git" /tmp/commit-repo
+          gh repo clone "$OWNER/$REPO" /tmp/commit-repo
           cd /tmp/commit-repo
 
           DEFAULT_BRANCH=$(git remote show origin | sed -n 's/.*HEAD branch: //p')
@@ -92,7 +93,7 @@ jobs:
           fi
 
           rm -rf /tmp/pr-repo
-          git clone "https://x-access-token:${GH_TOKEN}@github.com/$OWNER/$REPO.git" /tmp/pr-repo
+          gh repo clone "$OWNER/$REPO" /tmp/pr-repo
           cd /tmp/pr-repo
 
           DEFAULT_BRANCH=$(git remote show origin | sed -n 's/.*HEAD branch: //p')
