@@ -33,7 +33,7 @@ jobs:
       - name: Choose rotating repos
         id: seed
         run: |
-          REPOS=(zakiscoding Tinker-1 Stackz mysterygame coding- web-programming projects testing wp)
+          REPOS=(zakiscoding Tinker-1 Stackz mysterygame Kash web-programming projects testing wp)
           COUNT=${#REPOS[@]}
           DAY=$((10#$(date +%j)))
           echo "commit_repo=${REPOS[$((DAY % COUNT))]}" >> "$GITHUB_OUTPUT"
