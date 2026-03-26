@@ -98,7 +98,17 @@ jobs:
 
           DEFAULT_BRANCH=$(git remote show origin | sed -n 's/.*HEAD branch: //p')
           [ -z "$DEFAULT_BRANCH" ] && DEFAULT_BRANCH=main
-          git switch "$DEFAULT_BRANCH" || true
+
+          if ! git rev-parse HEAD 2>/dev/null; then
+            echo "Empty repo — initializing $DEFAULT_BRANCH"
+            git switch -c "$DEFAULT_BRANCH"
+            touch .gitkeep
+            git add .gitkeep
+            git commit -m "chore: initial commit"
+            git push -u origin "$DEFAULT_BRANCH"
+          else
+            git switch "$DEFAULT_BRANCH" || true
+          fi
 
           BRANCH="auto/maintenance-$(date +%Y%m%d-%H%M%S)"
           git switch -c "$BRANCH"
