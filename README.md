@@ -14,9 +14,8 @@
 <tr>
 <td valign="top" width="60%">
 
-- 🔧 **SRE Intern @ IBM (May 2026 – Present)** — MCP knowledge server for SRE troubleshooting, Terragrunt/Terraform templates, IBM Verify monitoring tools, OpenShift Kube Descheduler POC
-- 🏢 **SWE Intern @ Signify (Jan – May 2026)** — migrated workloads to AWS/Azure, built BLE Mesh smart lighting & CI/CD pipelines (30% faster dev, 40% faster builds)
-- 🧠 **AI Engineer Intern @ Crescent Technology (Jul – Dec 2025)** — RAG pipeline cut hallucinations 80%, latency 11–13s → <4s, MCP agentic workflows, ~20% token savings
+AI Engineer & SRE builder — I ship real products, not demos.
+
 - 🎓 **B.S. Computer Science @ Georgia State University** — GPA 3.8 · Expected May 2027
 - ☁️ AWS Certified: **CCP · AIF-C01** | Azure: **AZ-900**
 - 📍 Atlanta, GA · [Portfolio](https://zakariye-mohamed.vercel.app) · Open to internships, collabs & cool projects
@@ -29,6 +28,32 @@
 </td>
 </tr>
 </table>
+
+---
+
+### 💼 Experience
+
+<p>
+  <img src="https://img.shields.io/badge/IBM-SRE_Intern_(May_2026–Present)-052FAD?style=for-the-badge&logo=ibm&logoColor=white" />
+</p>
+
+MCP knowledge server for SRE troubleshooting · Terragrunt/Terraform templates · IBM Verify monitoring · OpenShift Kube Descheduler POC
+
+<br><br>
+
+<p>
+  <img src="https://img.shields.io/badge/Signify-SWE_Intern_(Jan–May_2026)-FF0000?style=for-the-badge&logo=philipshue&logoColor=white" />
+</p>
+
+AWS/Azure migration · BLE Mesh smart lighting · CI/CD pipelines (30% faster dev, 40% faster builds)
+
+<br><br>
+
+<p>
+  <img src="https://img.shields.io/badge/Crescent_Technology-AI_Engineer_(Jul–Dec_2025)-6366F1?style=for-the-badge" />
+</p>
+
+RAG pipeline cut hallucinations 80% · latency 11–13s → &lt;4s · MCP agentic workflows · ~20% token savings
 
 ---
 
@@ -56,9 +81,7 @@
   <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white" />
   <img src="https://img.shields.io/badge/XGBoost-FF6600?style=flat-square&logoColor=white" />
   <img src="https://img.shields.io/badge/MLflow-0194E2?style=flat-square&logo=mlflow&logoColor=white" />
-  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" />
   <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" />
-  <img src="https://img.shields.io/badge/Gemini_AI-8E75B2?style=flat-square&logo=google&logoColor=white" />
   <img src="https://img.shields.io/badge/Vector_DBs-412991?style=flat-square&logo=postgresql&logoColor=white" />
 </p>
 
@@ -67,12 +90,8 @@
   <img src="https://skillicons.dev/icons?i=aws,azure,gcp,docker,kubernetes,terraform,githubactions,jenkins" />
   <img src="https://img.shields.io/badge/Terragrunt-7B42BC?style=flat-square&logo=terraform&logoColor=white" />
   <img src="https://img.shields.io/badge/OpenShift-EE0000?style=flat-square&logo=redhatopenshift&logoColor=white" />
-  <img src="https://img.shields.io/badge/Red_Hat-EE0000?style=flat-square&logo=redhat&logoColor=white" />
-  <img src="https://img.shields.io/badge/ArgoCD-EF7B4D?style=flat-square&logo=argo&logoColor=white" />
-  <img src="https://img.shields.io/badge/Helm-0F1689?style=flat-square&logo=helm&logoColor=white" />
   <img src="https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white" />
   <img src="https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white" />
-  <img src="https://img.shields.io/badge/SonarQube-4E9BCD?style=flat-square&logo=sonarqube&logoColor=white" />
 </p>
 
 **Frontend & Backend**
@@ -87,18 +106,148 @@
 
 ---
 
-
 ### 🚀 Featured Projects
 
-| Project | Description | Stack |
-|--------|-------------|-------|
-| 💰 [**Kash — AI Finance SaaS**](https://kash-nine.vercel.app) | Production SaaS finance tracker with Gemini AI receipt scanning & LLM budget alerts. Live with real users. | Next.js · PostgreSQL · Gemini AI · Clerk · Inngest |
-| 🍔 [**QuickBite — AI Food Delivery**](https://team-sleep-liart.vercel.app) | Full-stack delivery platform with AI ordering assistant, driver message copilot, geolocation discovery & live order tracking | Next.js · React · Supabase · OpenAI · Google Places |
-| 🖥️ [**Multi-Node Homelab ML Platform**](https://github.com/zakiscoding/homelab-gpu) | Proxmox homelab with GPU LLM fine-tuning, heterogeneous compute nodes, K8s, and Prometheus/Grafana/MLflow observability | Proxmox · Kubernetes · Docker · PyTorch · MLflow |
-| 🧠 [**Multimodal Emotion AI**](https://github.com/zakiscoding/EMOTION-Multimodal-AI-Model) | Late-fusion model on MELD dataset predicting emotion from video, audio & text; trained on SageMaker with REST inference endpoints | PyTorch · BERT · OpenCV · AWS SageMaker · Next.js |
-| 📈 [**Housing Price Predictor — MLOps**](https://github.com/zakiscoding/Housing-Regression-Model) | XGBoost + 15-trial Optuna HPO + MLflow registry; FastAPI + Streamlit served on 2 ECS Fargate services via GitHub Actions CI/CD | XGBoost · FastAPI · MLflow · Docker · AWS ECS |
-| 🎬 [**Amazon Prime Clone — DevOps**](https://github.com/zakiscoding/amazon-prime) | Production-grade CI/CD: Jenkins → SonarQube → Trivy → ECR → EKS with GitOps via ArgoCD | Jenkins · Terraform · Kubernetes · ArgoCD · Prometheus |
-| 🎵 [**Audio CNN / Sound Classifier**](https://audio-cnn-saas.vercel.app) | CNN with residual blocks on ESC-50, Mel-spectrogram features, MixUp augmentation, GPU training via Modal | PyTorch · FastAPI · Next.js · Modal |
+#### 📌 Pinned
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+<table>
+<tr>
+<td style="border: 1px solid #30363d; border-radius: 8px; padding: 16px;">
+
+**💰 [Kash — AI Finance SaaS](https://kash-nine.vercel.app)**
+
+<img src="https://img.shields.io/badge/LIVE-kash--nine.vercel.app-00C853?style=flat-square" />
+
+<br><br>
+
+Production SaaS finance tracker with Gemini AI receipt scanning & LLM budget alerts. Live with real users.
+
+<br><br>
+
+<img src="https://img.shields.io/badge/Next.js-black?style=flat-square&logo=next.js" />
+<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" />
+<img src="https://img.shields.io/badge/Gemini_AI-8E75B2?style=flat-square&logo=google&logoColor=white" />
+<img src="https://img.shields.io/badge/Clerk-6C47FF?style=flat-square" />
+
+</td>
+</tr>
+</table>
+
+</td>
+<td width="50%" valign="top">
+
+<table>
+<tr>
+<td style="border: 1px solid #30363d; border-radius: 8px; padding: 16px;">
+
+**🍔 [QuickBite — AI Food Delivery](https://team-sleep-liart.vercel.app)**
+
+<img src="https://img.shields.io/badge/LIVE-team--sleep--liart.vercel.app-00C853?style=flat-square" />
+
+<br><br>
+
+Full-stack delivery with AI ordering assistant, driver message copilot, geolocation discovery & live tracking.
+
+<br><br>
+
+<img src="https://img.shields.io/badge/Next.js-black?style=flat-square&logo=next.js" />
+<img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" />
+<img src="https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white" />
+
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+#### All Projects
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+<table>
+<tr>
+<td style="border: 1px solid #30363d; border-radius: 8px; padding: 12px;">
+
+**🖥️ [Homelab ML Platform](https://github.com/zakiscoding/homelab-gpu)**
+
+Proxmox homelab · GPU LLM fine-tuning · K8s · Prometheus/Grafana/MLflow
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<table>
+<tr>
+<td style="border: 1px solid #30363d; border-radius: 8px; padding: 12px;">
+
+**🧠 [Multimodal Emotion AI](https://github.com/zakiscoding/EMOTION-Multimodal-AI-Model)**
+
+MELD late-fusion model · SageMaker training · REST inference endpoints
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<table>
+<tr>
+<td style="border: 1px solid #30363d; border-radius: 8px; padding: 12px;">
+
+**📈 [Housing MLOps](https://github.com/zakiscoding/Housing-Regression-Model)**
+
+XGBoost + Optuna + MLflow · 2 ECS Fargate services via GitHub Actions
+
+</td>
+</tr>
+</table>
+
+</td>
+<td width="50%" valign="top">
+
+<table>
+<tr>
+<td style="border: 1px solid #30363d; border-radius: 8px; padding: 12px;">
+
+**🎬 [Amazon Prime Clone](https://github.com/zakiscoding/amazon-prime)**
+
+Jenkins → SonarQube → Trivy → ECR → EKS · GitOps via ArgoCD
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<table>
+<tr>
+<td style="border: 1px solid #30363d; border-radius: 8px; padding: 12px;">
+
+**🎵 [Audio CNN Classifier](https://audio-cnn-saas.vercel.app)**
+
+<img src="https://img.shields.io/badge/LIVE-audio--cnn--saas.vercel.app-00C853?style=flat-square" />
+
+<br><br>
+
+ESC-50 CNN · Mel-spectrogram · MixUp · GPU training via Modal
+
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
 
 ---
 
