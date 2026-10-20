@@ -1,6 +1,6 @@
 <div align="center">
 
-![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=220&section=header&text=Zakariye%20Mohamed&fontSize=55&fontColor=fff&animation=twinkling&fontAlignY=38&desc=Systems%20Engineer%20%40%20InComm%20%7C%20AI%20Fellow%20%40%20Cornell%20Tech%20%7C%20CS%20%40%20GSU%20%26%20Georgia%20Tech&descSize=16&descAlignY=58)
+![header](https://capsule-render.vercel.app/api?type=waving&color=0:0D1B2A,50:1B4F72,100:2E86AB&height=200&section=header&text=Zakariye%20Mohamed&fontSize=52&fontColor=fff&animation=fadeIn&fontAlignY=40&desc=AI%20%C2%B7%20Systems%20%C2%B7%20Infrastructure&descSize=20&descAlignY=65&textBg=false)
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=Building+AI+systems+that+actually+ship+%F0%9F%9A%80;Systems+Engineer+Intern+%40+InComm+Payments;AI+Engineer+Fellow+%40+Cornell+Tech+%E2%80%94+RAG+%7C+MCP+%7C+LLMs;Ex+IBM+SRE+%C2%B7+Signify+SWE+%C2%B7+Crescent+AI;AWS+CCP+%7C+AZ-900+%7C+Cornell+ML+Foundations)](https://git.io/typing-svg)
 
