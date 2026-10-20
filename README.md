@@ -1,8 +1,8 @@
 <div align="center">
 
-![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=220&section=header&text=Zakariye%20Mohamed&fontSize=55&fontColor=fff&animation=twinkling&fontAlignY=38&desc=SRE%20%40%20IBM%20%7C%20AI%20Engineer%20%7C%20CS%20%40%20Georgia%20State&descSize=18&descAlignY=58)
+![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=220&section=header&text=Zakariye%20Mohamed&fontSize=55&fontColor=fff&animation=twinkling&fontAlignY=38&desc=Systems%20Engineer%20%40%20InComm%20%7C%20AI%20Fellow%20%40%20Cornell%20Tech%20%7C%20CS%20%40%20GSU%20%26%20Georgia%20Tech&descSize=16&descAlignY=58)
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=58A6FF&center=true&vCenter=true&width=650&lines=Building+AI+systems+that+actually+ship+%F0%9F%9A%80;SRE+Intern+%40+IBM+%E2%80%94+MCP+%7C+Terragrunt+%7C+OpenShift;Ex+Signify+%26+Crescent+%E2%80%94+cloud+migration%2C+RAG%2C+CI%2FCD;AWS+Certified+%E2%80%94+CCP+%7C+AIF-C01+%7C+AZ-900;MLOps+%7C+RAG+%7C+Kubernetes+%7C+CI%2FCD)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=Building+AI+systems+that+actually+ship+%F0%9F%9A%80;Systems+Engineer+Intern+%40+InComm+Payments;AI+Engineer+Fellow+%40+Cornell+Tech+%E2%80%94+RAG+%7C+MCP+%7C+LLMs;Ex+IBM+SRE+%C2%B7+Signify+SWE+%C2%B7+Crescent+AI;AWS+CCP+%7C+AZ-900+%7C+Cornell+ML+Foundations)](https://git.io/typing-svg)
 
 </div>
 
@@ -14,10 +14,11 @@
 <tr>
 <td valign="top" width="60%">
 
-AI Engineer & SRE builder — I ship real products, not demos.
+AI Engineer & systems builder — I ship real products, not demos.
 
-- 🎓 **B.S. Computer Science @ Georgia State University** — GPA 3.8 · Expected May 2027
-- ☁️ AWS Certified: **CCP · AIF-C01** | Azure: **AZ-900**
+- 🎓 **B.S. Computer Science @ Georgia State University** — Major GPA 3.8 · Expected May 2027
+- 🎓 **M.S. Computer Science @ Georgia Institute of Technology** — Admitted · Expected May 2028
+- ☁️ Certifications: **AWS CCP · AZ-900 · Cornell ML Foundations**
 - 📍 Atlanta, GA · [Portfolio](https://zakariye-mohamed.vercel.app) · Open to internships, collabs & cool projects
 
 </td>
@@ -31,13 +32,45 @@ AI Engineer & SRE builder — I ship real products, not demos.
 
 ---
 
+### 📄 Resumes
+
+<p align="center">
+  <a href="resumes/Zakariye_Mohamed_AI_Resume_.pdf">
+    <img src="https://img.shields.io/badge/AI_/_ML_Resume-FF6B35?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" />
+  </a>
+  <a href="resumes/Zakariye_Mohamed_Infra_Resume_.pdf">
+    <img src="https://img.shields.io/badge/Infrastructure_Resume-052FAD?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" />
+  </a>
+  <a href="resumes/Zakariye_Mohamed_Software_Resume_.pdf">
+    <img src="https://img.shields.io/badge/Software_Resume-181717?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" />
+  </a>
+</p>
+
+---
+
 ### 💼 Experience
 
 <p>
-  <img src="https://img.shields.io/badge/IBM-SRE_Intern_(May_2026–Present)-052FAD?style=for-the-badge&logo=ibm&logoColor=white" />
+  <img src="https://img.shields.io/badge/InComm_Payments-Systems_Engineer_Intern_(Sep_2026–Present)-00A3E0?style=for-the-badge" />
 </p>
 
-MCP knowledge server for SRE troubleshooting · Terragrunt/Terraform templates · IBM Verify monitoring · OpenShift Kube Descheduler POC
+SFTP batch platform migration & client onboarding · monitoring alerts for enterprise file workflows · reliability & incident detection
+
+<br><br>
+
+<p>
+  <img src="https://img.shields.io/badge/Cornell_Tech-AI_Engineer_Fellow_(Apr_2026–Present)-B31B1B?style=for-the-badge" />
+</p>
+
+Neural nets, RAG & multimodal LLMs with TensorFlow/Keras · MCP-based partner workflows · end-to-end applied ML pipelines
+
+<br><br>
+
+<p>
+  <img src="https://img.shields.io/badge/IBM-SRE_Intern_(May–Aug_2026)-052FAD?style=for-the-badge&logo=ibm&logoColor=white" />
+</p>
+
+Sentinel ops platform (React/Django/PostgreSQL) for 50+ engineers · MCP knowledge layer · ELK correlation-ID tracing · Terragrunt/Terraform
 
 <br><br>
 
@@ -61,8 +94,8 @@ RAG pipeline cut hallucinations 80% · latency 11–13s → &lt;4s · MCP agenti
 
 <p align="center">
   <img src="https://img.shields.io/badge/AWS_Cloud_Practitioner-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white" />
-  <img src="https://img.shields.io/badge/AWS_AI_Practitioner-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white" />
   <img src="https://img.shields.io/badge/Azure_Fundamentals_AZ--900-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white" />
+  <img src="https://img.shields.io/badge/Cornell_ML_Foundations-B31B1B?style=for-the-badge" />
 </p>
 
 ---
