@@ -1,10 +1,16 @@
 param(
     [string]$Branch = "main",
     [string]$StartDate = "2025-01-01",
-    [int]$TotalDays = 430
+    [int]$TotalDays = 430,
+    [switch]$ForcePush,
+    [switch]$DryRun
 )
 
 $ErrorActionPreference = "Stop"
+
+if ($TotalDays -lt 1) {
+    throw "TotalDays must be at least 1."
+}
 
 $messages = @(
     "fix bug",
@@ -37,7 +43,7 @@ Write-Host "Rebuilding realistic history from $($currentDate.ToString('yyyy-MM-d
 
 $daysProcessed = 0
 
-while ($currentDate -lt $endDate) {
+while ($currentDate -le $endDate) {
     $dayOfWeek = $currentDate.DayOfWeek
     
     # Skip weekends 60% of the time
@@ -70,7 +76,12 @@ while ($currentDate -lt $endDate) {
         }
 
         Add-Content -Path $filePath -Value $currentDate.ToString("yyyy-MM-dd HH:mm:ss") -ErrorAction SilentlyContinue
-        
+
+        if ($DryRun) {
+            $commitCount++
+            continue
+        }
+
         git add -A > $null 2>&1
         
         $msg = Get-Message
@@ -78,8 +89,10 @@ while ($currentDate -lt $endDate) {
         $env:GIT_COMMITTER_DATE = $currentDate.ToString("ddd MMM dd HH:mm:ss yyyy +0000")
         
         git commit -m "$msg [$project]" > $null 2>&1
-        
-        $commitCount++
+
+        if ($LASTEXITCODE -eq 0) {
+            $commitCount++
+        }
         
         if ($numCommits -gt 1) {
             $currentDate = $currentDate.AddHours(6)
@@ -97,7 +110,20 @@ while ($currentDate -lt $endDate) {
 }
 
 Write-Host "`n`nCreated $commitCount commits across $daysProcessed days (realistic sparse pattern)"
-Write-Host "Pushing to $Branch..."
-git push origin $Branch -f
+$env:GIT_AUTHOR_DATE = $null
+$env:GIT_COMMITTER_DATE = $null
+
+if ($DryRun) {
+    Write-Host "Dry run enabled: no commits were written and no push was performed."
+    exit 0
+}
+
+if ($ForcePush) {
+    Write-Host "Pushing to $Branch with force..."
+    git push origin $Branch -f
+} else {
+    Write-Host "Pushing to $Branch..."
+    git push origin $Branch
+}
 
 Write-Host "Done! Realistic dev history with gaps and natural patterns."
