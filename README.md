@@ -2,7 +2,7 @@
 
 ![header](https://capsule-render.vercel.app/api?type=waving&color=0:0D1B2A,50:1B4F72,100:2E86AB&height=200&section=header&text=Zakariye%20Mohamed&fontSize=52&fontColor=fff&animation=fadeIn&fontAlignY=40&desc=AI%20%C2%B7%20Systems%20%C2%B7%20Infrastructure&descSize=20&descAlignY=65&textBg=false)
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=Building+AI+systems+that+actually+ship+%F0%9F%9A%80;Systems+Engineer+Intern+%40+InComm+Payments;AI+Engineer+Fellow+%40+Cornell+Tech+%E2%80%94+RAG+%7C+MCP+%7C+LLMs;Ex+IBM+SRE+%C2%B7+Signify+SWE+%C2%B7+Crescent+AI;AWS+CCP+%7C+AZ-900+%7C+Cornell+ML+Foundations)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=Building+AI+systems+that+actually+ship+%F0%9F%9A%80;Systems+Engineer+Intern+%40+InComm+Payments;AI%2FML+Fellow+%40+Cornell+Tech+%E2%80%94+RAG+%7C+MCP+%7C+LLMs;Ex+IBM+SRE+%C2%B7+Signify+SWE+%C2%B7+Crescent+AI;AWS+CCP+%7C+AZ-900+%7C+Cornell+ML+Foundations)](https://git.io/typing-svg)
 
 </div>
 
@@ -16,7 +16,7 @@
 
 AI Engineer & systems builder — I ship real products, not demos.
 
-- 🎓 **B.S. Computer Science @ Georgia State University** — Major GPA 3.8 · Expected May 2027
+- 🎓 **B.S. Computer Science @ Georgia State University** — GPA 3.80 · Expected May 2027
 - 🎓 **M.S. Computer Science @ Georgia Institute of Technology** — Admitted · Expected May 2028
 - ☁️ Certifications: **AWS CCP · AZ-900 · Cornell ML Foundations**
 - 📍 Atlanta, GA · [Portfolio](https://zakariye-mohamed.vercel.app) · Open to internships, collabs & cool projects
@@ -32,22 +32,6 @@ AI Engineer & systems builder — I ship real products, not demos.
 
 ---
 
-### 📄 Resumes
-
-<p align="center">
-  <a href="resumes/Zakariye_Mohamed_AI_Resume_.pdf">
-    <img src="https://img.shields.io/badge/AI_/_ML_Resume-FF6B35?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" />
-  </a>
-  <a href="resumes/Zakariye_Mohamed_Infra_Resume_.pdf">
-    <img src="https://img.shields.io/badge/Infrastructure_Resume-052FAD?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" />
-  </a>
-  <a href="resumes/Zakariye_Mohamed_Software_Resume_.pdf">
-    <img src="https://img.shields.io/badge/Software_Resume-181717?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" />
-  </a>
-</p>
-
----
-
 ### 💼 Experience
 
 <p>
@@ -59,7 +43,7 @@ SFTP batch platform migration & client onboarding · monitoring alerts for enter
 <br><br>
 
 <p>
-  <img src="https://img.shields.io/badge/Cornell_Tech-AI_Engineer_Fellow_(Apr_2026–Present)-B31B1B?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Cornell_Tech_·_Break_Through_Tech-AI%2FML_Fellow_(Apr_2026–Present)-B31B1B?style=for-the-badge" />
 </p>
 
 Neural nets, RAG & multimodal LLMs with TensorFlow/Keras · MCP-based partner workflows · end-to-end applied ML pipelines
@@ -209,9 +193,9 @@ Full-stack delivery with AI ordering assistant, driver message copilot, geolocat
 <tr>
 <td style="border: 1px solid #30363d; border-radius: 8px; padding: 12px;">
 
-**🖥️ [Homelab ML Platform](https://github.com/zakiscoding/homelab-gpu)**
+**🖥️ [Homelab ML Platform](https://github.com/zakiscoding/homelab)**
 
-Proxmox homelab · GPU LLM fine-tuning · K8s · Prometheus/Grafana/MLflow
+k3s cluster · Postgres job queue with leases & retries · Qdrant RAG · Helm + Argo CD · Prometheus/Grafana/MLflow
 
 </td>
 </tr>
@@ -282,14 +266,44 @@ ESC-50 CNN · Mel-spectrogram · MixUp · GPU training via Modal
 </tr>
 </table>
 
+#### ⚙️ Systems & Performance
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**📊 [Limit Order Book & Replay](https://github.com/zakiscoding/limit-order)**
+
+C++ price/time matching engine · deterministic replay · 12.4M → 17.2M events/s after profiling the order-ID index
+
+<br>
+
+**🗄️ [Redis-Compatible Server](https://github.com/zakiscoding/redis-clone)**
+
+C · RESP protocol · nonblocking event loop · append-only log with crash recovery
+
+</td>
+<td width="50%" valign="top">
+
+**🔥 [GPU Systems Lab](https://github.com/zakiscoding/gpu-systems-lab)**
+
+CUDA reduction at ~625 GB/s (93% of DRAM peak) · NCCL all-reduce 344 GB/s on 2× H100 · vLLM behind a Cloudflare Worker gateway
+
+<br>
+
+**📈 [Low-Latency Trading Engine](https://github.com/zakiscoding/low-latency-trading-engine)**
+
+C++ engine on live market data · paper trading · public web UI
+
+</td>
+</tr>
+</table>
+
 ---
 
 ### 📫 Let's Connect
 
 <div align="center">
-  <a href="mailto:zakariyem0099@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
   <a href="https://linkedin.com/in/zakariye-mohamed">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
