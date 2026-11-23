@@ -1,4 +1,4 @@
-<a href="https://zakariye-mohamed.vercel.app"><img src="assets/banner-dark.svg#gh-dark-mode-only" alt="Zakariye Mohamed: AI, systems and infrastructure engineer" width="100%"></a><a href="https://zakariye-mohamed.vercel.app"><img src="assets/banner-light.svg#gh-light-mode-only" alt="Zakariye Mohamed: AI, systems and infrastructure engineer" width="100%"></a>
+<a href="https://zakariye-mohamed.vercel.app"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg"><img src="assets/banner-light.svg" alt="Zakariye Mohamed: AI, systems and infrastructure engineer" width="100%"></picture></a>
 
 <div align="center">
 
@@ -10,11 +10,11 @@
 
 </div>
 
-<img src="assets/divider-dark.svg#gh-dark-mode-only" alt="" width="100%"><img src="assets/divider-light.svg#gh-light-mode-only" alt="" width="100%">
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/divider-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/divider-light.svg"><img src="assets/divider-light.svg" alt="" width="100%"></picture>
 
 ## About
 
-<img src="assets/now-dark.svg#gh-dark-mode-only" alt="now.yml: Georgia State B.S. Computer Science 2023 to 2027; Systems Engineer Intern at InComm Payments; AI/ML Fellow at Cornell Tech and Break Through Tech; building a GPU-aware job scheduler" width="100%"><img src="assets/now-light.svg#gh-light-mode-only" alt="now.yml: Georgia State B.S. Computer Science 2023 to 2027; Systems Engineer Intern at InComm Payments; AI/ML Fellow at Cornell Tech and Break Through Tech; building a GPU-aware job scheduler" width="100%">
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/now-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/now-light.svg"><img src="assets/now-light.svg" alt="now.yml: Georgia State B.S. Computer Science 2023 to 2027; Systems Engineer Intern at InComm Payments; AI/ML Fellow at Cornell Tech and Break Through Tech; building a GPU-aware job scheduler" width="100%"></picture>
 
 ## Experience
 
@@ -29,12 +29,12 @@
 ## Featured Projects
 
 <p align="center">
-  <a href="https://github.com/zakiscoding/gophergrid"><img src="assets/projects/gophergrid-dark.svg#gh-dark-mode-only" alt="gophergrid: distributed job scheduler in Go and Rust with exactly-once results" width="49%"></a><a href="https://github.com/zakiscoding/gophergrid"><img src="assets/projects/gophergrid-light.svg#gh-light-mode-only" alt="gophergrid: distributed job scheduler in Go and Rust with exactly-once results" width="49%"></a>
-  <a href="https://github.com/zakiscoding/limit-order"><img src="assets/projects/limit-order-dark.svg#gh-dark-mode-only" alt="limit-order: C++ matching engine at 17.2M events per second" width="49%"></a><a href="https://github.com/zakiscoding/limit-order"><img src="assets/projects/limit-order-light.svg#gh-light-mode-only" alt="limit-order: C++ matching engine at 17.2M events per second" width="49%"></a>
-  <a href="https://github.com/zakiscoding/gpu-systems-lab"><img src="assets/projects/gpu-lab-dark.svg#gh-dark-mode-only" alt="gpu-systems-lab: CUDA reduction at 625 GB/s and NCCL all-reduce at 344 GB/s" width="49%"></a><a href="https://github.com/zakiscoding/gpu-systems-lab"><img src="assets/projects/gpu-lab-light.svg#gh-light-mode-only" alt="gpu-systems-lab: CUDA reduction at 625 GB/s and NCCL all-reduce at 344 GB/s" width="49%"></a>
-  <a href="https://kash-nine.vercel.app"><img src="assets/projects/kash-dark.svg#gh-dark-mode-only" alt="Kash: live AI finance tracker with Gemini receipt scanning" width="49%"></a><a href="https://kash-nine.vercel.app"><img src="assets/projects/kash-light.svg#gh-light-mode-only" alt="Kash: live AI finance tracker with Gemini receipt scanning" width="49%"></a>
-  <a href="https://github.com/zakiscoding/homelab"><img src="assets/projects/homelab-dark.svg#gh-dark-mode-only" alt="homelab: 11-service Helm chart on k3s with Argo CD" width="49%"></a><a href="https://github.com/zakiscoding/homelab"><img src="assets/projects/homelab-light.svg#gh-light-mode-only" alt="homelab: 11-service Helm chart on k3s with Argo CD" width="49%"></a>
-  <a href="https://github.com/zakiscoding/redis-clone"><img src="assets/projects/redis-dark.svg#gh-dark-mode-only" alt="redis-clone: Redis-compatible server in C with a crash-safe append-only log" width="49%"></a><a href="https://github.com/zakiscoding/redis-clone"><img src="assets/projects/redis-light.svg#gh-light-mode-only" alt="redis-clone: Redis-compatible server in C with a crash-safe append-only log" width="49%"></a>
+  <a href="https://github.com/zakiscoding/gophergrid"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/projects/gophergrid-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/projects/gophergrid-light.svg"><img src="assets/projects/gophergrid-light.svg" alt="gophergrid: distributed job scheduler in Go and Rust with exactly-once results" width="49%"></picture></a>
+  <a href="https://github.com/zakiscoding/limit-order"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/projects/limit-order-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/projects/limit-order-light.svg"><img src="assets/projects/limit-order-light.svg" alt="limit-order: C++ matching engine at 17.2M events per second" width="49%"></picture></a>
+  <a href="https://github.com/zakiscoding/gpu-systems-lab"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/projects/gpu-lab-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/projects/gpu-lab-light.svg"><img src="assets/projects/gpu-lab-light.svg" alt="gpu-systems-lab: CUDA reduction at 625 GB/s and NCCL all-reduce at 344 GB/s" width="49%"></picture></a>
+  <a href="https://kash-nine.vercel.app"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/projects/kash-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/projects/kash-light.svg"><img src="assets/projects/kash-light.svg" alt="Kash: live AI finance tracker with Gemini receipt scanning" width="49%"></picture></a>
+  <a href="https://github.com/zakiscoding/homelab"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/projects/homelab-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/projects/homelab-light.svg"><img src="assets/projects/homelab-light.svg" alt="homelab: 11-service Helm chart on k3s with Argo CD" width="49%"></picture></a>
+  <a href="https://github.com/zakiscoding/redis-clone"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/projects/redis-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/projects/redis-light.svg"><img src="assets/projects/redis-light.svg" alt="redis-clone: Redis-compatible server in C with a crash-safe append-only log" width="49%"></picture></a>
 </p>
 
 <details>
@@ -60,4 +60,4 @@
 
 <p align="center"><sub>Also: CUDA · NCCL · vLLM · Hugging Face · LangChain · MLflow · Qdrant · gRPC · etcd · Helm · Argo CD · Prometheus · OpenShift</sub></p>
 
-<img src="assets/divider-dark.svg#gh-dark-mode-only" alt="" width="100%"><img src="assets/divider-light.svg#gh-light-mode-only" alt="" width="100%">
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/divider-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/divider-light.svg"><img src="assets/divider-light.svg" alt="" width="100%"></picture>
